@@ -1,0 +1,236 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+
+    <link href="{% static 'bootstrap/sidebar-bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'fonts.css' %}" rel="stylesheet">
+    <link href="{% static 'layout.css' %}" rel="stylesheet">
+
+
+    {% block custom-css %}
+
+    {% endblock %}
+
+    {% block head %}
+    <title>{% block title %}Bootstrap template{% endblock %}</title>
+    {% endblock %}
+  </head>
+
+  <body>
+
+  <div class="page-wrapper">
+
+  {% block page-wrapper %}
+
+  {% block sidebar %}
+
+  <nav id="sidebar">
+     <div class="text-center">            
+            <div class="mb-4">
+                <img id="logo-us" class="rounded mt-4"
+                    src="{% static 'img/cc-logo.svg' %}" alt="">
+            </div>
+            <h3>Sidebar header</h3>
+            <p>{{ user.last_name|default:"Last Name" }}, {{ user.first_name|default:"First name" }} 
+                <br />
+            &lt;{{user.username}}&gt;</p>
+      </div>
+
+    <hr />
+    <ul class="list-unstyled components">
+    <li class="active">
+
+        <a href="#homeSubmenu"
+            data-bs-toggle="collapse"
+            aria-expanded="false"
+            role="button"
+            class="dropdown-toggle">Home</a>
+            <ul class="collapse list-unstyled"
+                id="homeSubmenu">
+                <li>
+                    <a href="#">Home 1</a>
+                </li>
+                <li>
+                    <a href="#">Home 2</a>
+                </li>
+                <li>
+                    <a href="#">Home 3</a>
+                </li>
+            </ul>
+    </li>
+    <li>
+        <a href="#">About</a>
+    </li>
+    </ul>
+
+    {% if user.is_authenticated %}
+      <ul class="list-unstyled " >
+        <li>
+        <a href="#">Logout</a>
+        </li>
+      </ul>
+    {% endif %}
+  </nav>
+  {% endblock %}
+
+  <div id="content">
+    {% block navbar %}
+    <nav id="navbar-top" class="navbar navbar-expand-sm navbar-light ">
+        <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <img class="mdi-svg" src="{% static 'mdi/menu.svg' %}" type="image/svg+xml" />
+            </button>
+
+            <button class="btn btn-dark d-inline-block d-sm-none ms-auto"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarTop"
+                    aria-controls="navbarTop"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <img class="mdi-svg" src="{% static 'mdi/menu.svg' %}" type="image/svg+xml" />
+            </button>
+            {% block navbar-links %}
+            <div class="collapse navbar-collapse" id="navbarTop">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarAdmin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Menu
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarAdmin">
+                          <li><a class="dropdown-item" href="#">
+                              Item</a></li>
+                          <li><a class="dropdown-item" href="#">
+                              Item</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Item</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>
+                      
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>
+                </ul>
+            </div>
+            {% endblock %}
+        </div>
+    </nav>
+    {% endblock %}
+
+    {% block messages %}
+        {% include 'snippets/show_messages.html' %}
+    {% endblock %}
+
+
+
+    <div id="content-wrapper">
+        {% block content %}
+
+            <h2>Collapsible Sidebar Using Bootstrap</h2> 
+
+            <p> Example of <a href="#" class="download-icon"> download link
+            </a> and an <a href="" class="link-icon" >External link</a></p>
+            
+            <p>Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.</p> <p>Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.</p>
+
+            <div class="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2> <p>Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+            <div class="line"></div>
+
+            <h2>Lorem Ipsum Dolor</h2>
+
+            <p>Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+            <div class="line"></div>
+
+            <h3>Lorem Ipsum Dolor</h3>
+
+            <p>Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.</p>
+
+        {% endblock %}
+        {% block footer %}
+        <div class="contanier" >
+            <footer class="text-end text-secondary fst-italic mt-5">
+            <p>&copy; 2021 Paulino Ruiz de Clavijo Vázquez</p>
+            </footer>
+        </div>
+        {% endblock %}
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
+
+</div>
+
+<script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
+
+<script type="text/javascript">
+
+document.addEventListener("DOMContentLoaded", function(event) { 
+    document.getElementById("sidebarCollapse").onclick = function () {
+        document.getElementById("sidebar").classList.toggle("active");
+        document.getElementById("content").classList.toggle("active");
+        }
+    });
+
+</script>
+
+  </body>
+</html>

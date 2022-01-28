@@ -1,0 +1,40 @@
+{% extends "bootstrap_base.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+
+{% block page-wrapper %}
+
+
+{% include 'snippets/show_messages.html' %}
+
+<div class="d-flex justify-content-center py-5">
+  <div class="text-center card shadow-sm">
+    <div class="card-body">
+      <h1>Sign in</h1>
+
+      <form method="post" >
+        {% csrf_token %}
+        {% include 'snippets/show_err.html' with err=form.non_field_errors %}
+        <div class="form-field">
+            {{ form.username.errors }}
+            <label class="form-label" for="{{ form.username.id_for_label }}">
+              User</label>
+            {{ form.username }}
+            
+        </div>
+        <div class="form-field">
+            {{ form.password.errors }}
+            <label for="{{ form.password.id_for_label }}">Password</label>
+            {{ form.password }}
+        </div>
+        <input type="hidden" id="next" name="next" 
+          value="{{ next }}">
+        <button class="btn btn-primary btn-block m-4" type="submit">
+          Login</button>
+    </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

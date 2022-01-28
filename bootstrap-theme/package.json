@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "npm-run-all bootstrap fonts ",
+    "bootstrap": "node-sass --output-style compressed custom.scss sidebar-bootstrap.css",
+    "fonts": "google-font-downloader https://fonts.googleapis.com/css2?family=Montserrat:wght@300%3B400%3B700&display=swap"
+  },
+  "dependencies": {
+    "bootstrap": "5.1",
+    "google-font-downloader": "1.0.6",
+    "node-sass": "^7.0.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
