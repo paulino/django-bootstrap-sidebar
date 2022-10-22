@@ -1,11 +1,13 @@
-{% load static %}
 <!doctype html>
-<html lang="en">
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+<html lang="{{ LANGUAGE_CODE }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />  
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <link href="{% static 'bootstrap/sidebar-bootstrap.css' %}" rel="stylesheet">
     <link href="{% static 'fonts.css' %}" rel="stylesheet">
@@ -30,13 +32,13 @@
   {% block sidebar %}
 
   <nav id="sidebar">
-     <div class="text-center">            
+     <div class="text-center">
             <div class="mb-4">
                 <img id="logo" class="rounded mt-4"
                     src="{% static 'img/cc-logo.svg' %}" alt="">
             </div>
             <h3>Sidebar header</h3>
-            <p>{{ user.last_name|default:"Last Name" }}, {{ user.first_name|default:"First name" }} 
+            <p>{{ user.last_name|default:"Last Name" }}, {{ user.first_name|default:"First name" }}
                 <br />
             &lt;{{user.username}}&gt;</p>
       </div>
@@ -114,7 +116,7 @@
                       <li class="nav-item active">
                         <a class="nav-link" href="#">Page</a>
                     </li>
-                      
+
 
                     <li class="nav-item">
                         <a class="nav-link" href="#">Page</a>
@@ -138,11 +140,11 @@
     <div id="content-wrapper">
         {% block content %}
 
-            <h2>Collapsible Sidebar Using Bootstrap</h2> 
+            <h2>Collapsible Sidebar Using Bootstrap</h2>
 
             <p> Example of <a href="#" class="download-icon"> download link
             </a> and an <a href="" class="link-icon" >External link</a></p>
-            
+
             <p>Lorem ipsum dolor
             sit amet, consectetur adipisicing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -200,7 +202,7 @@
         {% block footer %}
         <div class="contanier" >
             <footer class="text-end text-secondary fst-italic mt-5">
-            <p>&copy; 2021 Paulino Ruiz de Clavijo Vázquez</p>
+            <p>&copy; 2022 Paulino Ruiz de Clavijo Vázquez</p>
             </footer>
         </div>
         {% endblock %}
@@ -208,24 +210,18 @@
   </div>
 
 {% endblock %}
-
-
-
-
 </div>
 
 <script src="{% static 'bootstrap/bootstrap.bundle.min.js' %}"></script>
-
 <script type="text/javascript">
-
-document.addEventListener("DOMContentLoaded", function(event) { 
+document.addEventListener("DOMContentLoaded", function(event) {
     document.getElementById("sidebarCollapse").onclick = function () {
         document.getElementById("sidebar").classList.toggle("active");
         document.getElementById("content").classList.toggle("active");
         }
     });
-
 </script>
-
+{% block after-bootstrap-js %}
+{% endblock %}
   </body>
 </html>

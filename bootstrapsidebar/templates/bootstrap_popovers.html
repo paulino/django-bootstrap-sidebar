@@ -1,0 +1,44 @@
+{% extends "bootstrap_base.html" %}
+
+{% block content %}
+
+<h1>Popovers</h1>
+<p>
+Demo gotten from <a
+href="https://getbootstrap.com/docs/5.1/components/popovers/">Popovers</a>
+</p>
+</p>
+Popovers requires extra javascript initialization code that must be placed
+after bootstrap javascript. 
+<p>
+
+<div class="mt-4 mb-4" >
+<button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+</div>
+<div class="mt-4">
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+    Popover on top
+  </button>
+  <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+    Popover on right
+  </button>
+  <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+    Popover on bottom
+  </button>
+  <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+    Popover on left
+  </button>
+</div>
+
+{% endblock %}
+
+{% block after-bootstrap-js %}
+<script>
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+</script>
+
+{% endblock %}
+
