@@ -5,11 +5,11 @@
 <h1>Popovers</h1>
 <p>
 Demo gotten from <a
-href="https://getbootstrap.com/docs/5.1/components/popovers/">Popovers</a>
+href="https://getbootstrap.com/docs/5.2/components/popovers/">Popovers</a>
 </p>
 </p>
 Popovers requires extra javascript initialization code that must be placed
-after bootstrap javascript. 
+after bootstrap javascript.
 <p>
 
 <div class="mt-4 mb-4" >
@@ -34,11 +34,8 @@ after bootstrap javascript.
 
 {% block after-bootstrap-js %}
 <script>
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 </script>
-
 {% endblock %}
 

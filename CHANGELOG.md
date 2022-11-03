@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.1.0]
+
+ - Upgraded to Bootstrap 5.2.2
+
 ## [v1.0.2]
 
 - Added `after-bootstrap-js` block to support extra javascript like popovers

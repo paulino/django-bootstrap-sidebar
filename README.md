@@ -5,14 +5,14 @@ customization in self-hosted mode (non-CDN).
 
 Features:
 
-- Bootstrap 5.1
+- Bootstrap 5.2
 - Django 4
 - Templates included:
   - bootstrap_base.html
   - bootstrap_popovers.html
   - registration/login.html
   - snippets/show_err.html
-  - snippets/show_messages.html  
+  - snippets/show_messages.html
 - Bootstrap customization available at bootstrap-theme directory.
 - Custom font from google-fonts in local static files.
 
@@ -33,7 +33,7 @@ The preferred way to install is via pip
 but you can install in develop mode cloning this repo but static files are not
 included in the repo. See *Customize bootstrap theme section* for details.
 
-After the installation in `settings.py` of your Django instance 
+After the installation in `settings.py` of your Django instance
 add `bootstrapsidebar`:
 
 ```python
@@ -108,7 +108,7 @@ To generate/upgrade static files makefile automates the process, run make:
 Due performance reasons popovers are not default enabled. One way is to enable
 popovers everywhere, which requires an extra javascript after the Bootstrap
 javascript. The last solution is not optimal, but it is a simple way, a detailed instructions are available at [Bootstrap
-Popovers](https://getbootstrap.com/docs/5.1/components/popovers/)
+Popovers](https://getbootstrap.com/docs/5.2/components/popovers/)
 
 The block `after-bootstrap-js` is intended  to enable popovers and
 the following code snippet from Bootstrap can be used:
@@ -116,15 +116,13 @@ the following code snippet from Bootstrap can be used:
 ```html
 {% block after-bootstrap-js %}
 <script>
-  var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-  var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-    return new bootstrap.Popover(popoverTriggerEl)
-  })
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 </script>
-{% endblock %}  
+{% endblock %}
 ```
 
-A full example is available at template 
+A full example is available at template
 [bootstrap_popovers.html](bootstrapsidebar/templates/bootstrap_popovers.html)
 
 

@@ -1,2 +1,5 @@
 __pycache__
 migrations
+venv
+dist
+django_bootstrap_sidebar.egg-info
