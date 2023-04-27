@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.1.1]
+
+ - Upgraded to Bootstrap 5.2.3
+
 ## [v1.1.0]
 
  - Upgraded to Bootstrap 5.2.2
