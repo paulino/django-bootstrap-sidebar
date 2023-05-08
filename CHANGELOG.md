@@ -1,5 +1,10 @@
 # Changelog
 
+## [Unreleased]
+
+- Upgraded to Bootstrap 5.3.x
+- Changed css link-icon
+
 ## [v1.1.1]
 
  - Upgraded to Bootstrap 5.2.3
