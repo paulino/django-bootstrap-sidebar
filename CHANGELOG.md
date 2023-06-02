@@ -1,9 +1,10 @@
 # Changelog
 
-## [Unreleased]
+## [v1.2.0]
 
-- Upgraded to Bootstrap 5.3.x
-- Changed css link-icon
+ - Upgraded to Bootstrap 5.3.0
+ - Changed fonts from ttf to woff2
+ - Changed css link-icon
 
 ## [v1.1.1]
 

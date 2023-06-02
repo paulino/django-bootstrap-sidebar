@@ -1,8 +1,5 @@
 # Collapsible Sidebar Using Bootstrap for DJango
 
-> **Warning**
-This version uses Bootstrap 5.3-alpha
-
 *Collapsible Sidebar Using Bootstrap* is a base template with a bootstrap simple
 customization in self-hosted mode (non-CDN).
 

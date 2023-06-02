@@ -3,3 +3,4 @@ migrations
 venv
 dist
 django_bootstrap_sidebar.egg-info
+fonts.css
