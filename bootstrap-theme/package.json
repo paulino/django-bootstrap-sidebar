@@ -5,7 +5,7 @@
     "fonts": "./gfontsdw.py 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300%3B400%3B700&display=swap'"
   },
   "dependencies": {
-    "bootstrap": "5.3.0",
+    "bootstrap": "5.3.1",
     "npm-run-all": "~4.1",
     "sass": "~1.62"
   }

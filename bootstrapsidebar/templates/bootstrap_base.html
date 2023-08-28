@@ -40,7 +40,7 @@
             <h3>Sidebar header</h3>
             <p>{{ user.last_name|default:"Last Name" }}, {{ user.first_name|default:"First name" }}
                 <br />
-            &lt;{{user.username}}&gt;</p>
+            &lt;{{user.username|default:"anonuser"}}&gt;</p>
       </div>
 
     <hr />
@@ -140,7 +140,8 @@
     <div id="content-wrapper">
         {% block content %}
 
-            <h2>Collapsible Sidebar Using Bootstrap</h2>
+            <h2>Collapsible Sidebar Using Bootstrap
+                <span id="bootstrap-version"></span></h2>
 
             <p> Example of <a href="#" class="download-icon"> download link
             </a> and an <a href="" class="link-icon" >External link</a></p>
@@ -222,6 +223,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 </script>
 {% block after-bootstrap-js %}
+    <script>
+        document.getElementById("bootstrap-version").innerHTML = bootstrap.Tooltip.VERSION
+    </script>
 {% endblock %}
   </body>
 </html>

@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.2.1]
+
+ - Upgraded to Bootstrap 5.3.1
+ - Fixed missing web fonts
+
 ## [v1.2.0]
 
  - Upgraded to Bootstrap 5.3.0
