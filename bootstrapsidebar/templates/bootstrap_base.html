@@ -138,10 +138,16 @@
 
 
     <div id="content-wrapper">
-        {% block content %}
+        {% block content %}            
 
             <h2>Collapsible Sidebar Using Bootstrap
                 <span id="bootstrap-version"></span></h2>
+
+            <script>
+                window.onload = function() {
+                    document.getElementById("bootstrap-version").innerHTML = bootstrap.Tooltip.VERSION
+                }
+            </script>
 
             <p> Example of <a href="#" class="download-icon"> download link
             </a> and an <a href="" class="link-icon" >External link</a></p>
@@ -223,9 +229,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 </script>
 {% block after-bootstrap-js %}
-    <script>
-        document.getElementById("bootstrap-version").innerHTML = bootstrap.Tooltip.VERSION
-    </script>
+
 {% endblock %}
   </body>
 </html>

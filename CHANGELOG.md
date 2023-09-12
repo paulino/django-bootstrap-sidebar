@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.2.2]
+
+ - Removed extra javascript at base template
+
 ## [v1.2.1]
 
  - Upgraded to Bootstrap 5.3.1
