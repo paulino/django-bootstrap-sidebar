@@ -6,9 +6,8 @@ STATIC_DIR=bootstrapsidebar/static
 bootstrap:
 	cd bootstrap-theme && npm install
 	cd bootstrap-theme && npm run build
-	cp bootstrap-theme/sidebar-bootstrap.css $(STATIC_DIR)/bootstrap
-	cp bootstrap-theme/sidebar-bootstrap.css.map $(STATIC_DIR)/bootstrap
-	cp bootstrap-theme/node_modules/bootstrap/dist/js/bootstrap.bundle.* $(STATIC_DIR)/bootstrap
+	cp bootstrap-theme/sidebar-bootstrap.min.* $(STATIC_DIR)/bootstrap
+	cp bootstrap-theme/node_modules/bootstrap/dist/js/bootstrap.bundle.min.* $(STATIC_DIR)/bootstrap
 	cp -r bootstrap-theme/fonts $(STATIC_DIR)
 	cp bootstrap-theme/fonts.css $(STATIC_DIR)/fonts.css
 

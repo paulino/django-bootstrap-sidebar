@@ -62,6 +62,8 @@ if not os.path.exists("fonts"):
 
 css = requests.request("GET",g_url,headers=headers[FORMAT])
 urls = re.findall(reg_url, css.text)
+# Remove duplicates 
+urls = list(dict.fromkeys(urls))
 
 new_css = css.text
 for url in urls:

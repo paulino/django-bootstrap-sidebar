@@ -1,8 +1,14 @@
 # Changelog
 
+## [v1.2.3]
+
+- Upgraded to Bootstrap 5.3.2
+- Minified css
+- Removed duplicate urls in font downloader
+
 ## [v1.2.2]
 
- - Removed extra javascript at base template
+ - Removed extra javascript in base template
 
 ## [v1.2.1]
 
