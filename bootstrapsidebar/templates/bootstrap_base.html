@@ -74,10 +74,13 @@
     </ul>
 
     {% if user.is_authenticated %}
-      <ul class="list-unstyled " >
+      <ul class="list-unstyled" >
         <li>
-        <a href="#">Logout</a>
+            <form action="{% url 'logout' %}" method="post">{% csrf_token %}
+              <button class="btn btn-sidebar" type="submit">Logout</input>
+            </form>
         </li>
+
       </ul>
     {% endif %}
   </nav>

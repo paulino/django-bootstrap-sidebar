@@ -33,13 +33,13 @@ The preferred way to install is via pip
 but you can install in develop mode cloning this repo but static files are not
 included in the repo. See *Customize bootstrap theme section* for details.
 
-After the installation in `settings.py` of your Django instance
-add `bootstrapsidebar`:
+After installing your Django instance in `settings.py`, add `bootstrapsidebar`
+before `django.contrib.auth` since some auth templates are overridden.
 
 ```python
 INSTALLED_APPS = [
-    ...
     'bootstrapsidebar'
+    'django.contrib.auth',
     ...
 ]
 ```

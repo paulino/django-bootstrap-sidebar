@@ -1,10 +1,9 @@
 {% extends "bootstrap_base.html" %}
-{% load static %}
+{% load i18n static %}
 
 {% block title %}Login{% endblock %}
 
 {% block page-wrapper %}
-
 
 {% include 'snippets/show_messages.html' %}
 
@@ -14,7 +13,7 @@
       <div class="card">
         <form class="card-body cardbody-color p-lg-5" method="post">
           <div class="text-center">
-            <h2 class="text-center text-dark mt-3">Sign in</h2>
+            <h2 class="text-center text-dark mt-3">{% translate 'Log in' %}</h2>
           </div>
           {% csrf_token %}
           {% include 'snippets/show_err.html' with err=form.non_field_errors %}
@@ -22,13 +21,22 @@
             {% include 'snippets/show_err.html' with err=form.username.errors %}
             <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
               autocomplete="current-password"
-              name="username" placeholder="User Name">
+              name="username" placeholder="{% translate 'username' %}">
           </div>
           <div class="mb-3">
             {% include 'snippets/show_err.html' with err=form.password.errors %}
-            <input type="password" class="form-control" id="password" placeholder="password" name="password">
+            <input type="password" class="form-control" id="password" placeholder="{% translate 'password' %}" name="password">
           </div>
-          <div class="text-center"><button type="submit" class="btn btn-primary px-5 mb-5 w-100">Login</button></div>
+          <div class="text-center">
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit" class="btn btn-primary px-5 mb-5 w-100">{% translate 'Log in' %}</button>
+          </div>
+          {% if password_reset_url %}
+          <div>
+            <a href="{{ password_reset_url }}">{% translate 'Forgotten your password or username?' %}</a>
+          </div>
+          {% endif %}
+
         </form>
       </div>
     </div>
