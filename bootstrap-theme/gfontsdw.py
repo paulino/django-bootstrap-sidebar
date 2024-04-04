@@ -21,12 +21,12 @@ the URL of the "link" or "import" statement::
     </style>
 
 """
-import requests
 import re
 import sys
 import os
+from urllib import request
 
-__version__ = "1"
+__version__ = "2"
 
 ## Settings: the following options are not implemented as command line args
 
@@ -60,18 +60,19 @@ headers = {
 if not os.path.exists("fonts"):
     os.mkdir("fonts")
 
-css = requests.request("GET",g_url,headers=headers[FORMAT])
-urls = re.findall(reg_url, css.text)
-# Remove duplicates 
+req = request.Request(g_url, headers=headers[FORMAT])
+with request.urlopen(req) as response:
+   css : bytes  = response.read()
+urls = re.findall(reg_url, css.decode("utf-8"))
+# Remove duplicates
 urls = list(dict.fromkeys(urls))
-
-new_css = css.text
+with request.urlopen(req) as response:
+   the_page = response.read()
+new_css  = css.decode("utf-8")
 for url in urls:
     font_name = url.split("/")[-1]
     print(f"Download: fonts/{font_name}")
-    res = requests.get(url, stream=True)
-    with open(f"fonts/{font_name}", 'wb') as out_file:
-        out_file.write(res.content)
+    request.urlretrieve(url, f"fonts/{font_name}")
     new_css = new_css.replace(url,f"fonts/{font_name}")
 
 with open(f"fonts.css", 'w') as out_file:
