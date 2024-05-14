@@ -1,11 +1,17 @@
 # Changelog
 
+## [v1.2.5] Unreleased
+
+- Added templates for HTTP errors 500, 403 and 404.
+- Added a demo in example directory
+- Improved login form and password reset form
+
 ## [v1.2.4]
 
 - Upgraded to Bootstrap 5.3.3
 - Fixed logout link in sidebar
 - Fixed padding in top menu
-- Added a template for overriding the default django change password form
+- Added a template for overriding the default Django change password form
 - Added i18n support to login template
 - Removed requests dependence in fonts-downloader
 

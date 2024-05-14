@@ -1,0 +1,128 @@
+{% extends "bootstrap_base.html" %}
+{% load i18n static %}
+
+{% block sidebar %}
+
+<nav id="sidebar">
+   <div class="text-center">
+          <div class="mb-4">
+              <img id="logo" class="rounded mt-4"
+                  src="{% static 'img/cc-logo.svg' %}" alt="">
+          </div>
+          <h3>Sidebar header</h3>
+          <p>{{ user.last_name|default:"Last Name" }}, {{ user.first_name|default:"First name" }}
+              <br />
+          &lt;{{user.username|default:"anonuser"}}&gt;</p>
+    </div>
+
+  <hr />
+  <ul class="list-unstyled components">
+    <li class="{{sidebar_active.home}}">
+      <a href="{%url 'home' %}"   >Home</a>
+    </li>
+
+    <li>
+        <a href="#exampleSubmenu" data-bs-toggle="collapse" aria-expanded="false"
+           role="button" class="dropdown-toggle">Examples</a>
+        <ul id="exampleSubmenu" class="list-unstyled  {{sidebar_active.examples|default:"collapse"}}">
+            <li class="{{sidebar_active.popovers}}">
+                <a href="{%url 'popovers'%}">Popovers</a>
+            </li>
+            <li class="{{sidebar_active.forms}}">
+                <a href="{%url 'forms'%}">Forms</a>
+            </li>
+            <li class="{{sidebar_active.errors}}">
+                <a href="{%url 'errors'%}">Error pages</a>
+            </li>
+        </ul>
+
+    </li>
+
+
+  <li>
+      <a href="#">About</a>
+  </li>
+  </ul>
+
+  {% if user.is_authenticated %}
+    <ul class="list-unstyled" >
+      <li>
+          <form action="{% url 'logout' %}" method="post">{% csrf_token %}
+            <button class="btn btn-sidebar" type="submit">Logout</button>
+          </form>
+      </li>
+
+    </ul>
+  {% endif %}
+</nav>
+{% endblock %}
+
+
+{% block content %}
+
+<h2>Collapsible Sidebar Using Bootstrap
+    <span id="bootstrap-version"></span></h2>
+
+<script>
+    window.onload = function() {
+        document.getElementById("bootstrap-version").innerHTML = bootstrap.Tooltip.VERSION
+    }
+</script>
+
+<p> Example of <a href="#" class="download-icon"> download link
+</a> and an <a href="" class="link-icon" >External link</a></p>
+
+<p>Lorem ipsum dolor
+sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+officia deserunt mollit anim id est laborum.</p> <p>Lorem ipsum
+dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+ea commodo consequat. Duis aute irure dolor in reprehenderit in
+voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+officia deserunt mollit anim id est laborum.</p>
+
+<div class="line"></div>
+
+<h2>Lorem Ipsum Dolor</h2> <p>Lorem ipsum dolor sit amet,
+consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit
+anim id est laborum.</p>
+
+<div class="line"></div>
+
+<h2>Lorem Ipsum Dolor</h2>
+
+<p>Lorem ipsum dolor sit amet,
+consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit
+anim id est laborum.</p>
+
+<div class="line"></div>
+
+<h3>Lorem Ipsum Dolor</h3>
+
+<p>Lorem ipsum dolor sit amet,
+consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+cupidatat non proident, sunt in culpa qui officia deserunt mollit
+anim id est laborum.</p>
+
+{% endblock %}

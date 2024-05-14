@@ -1,0 +1,76 @@
+{% extends "demo_base.html" %}
+
+{% block content %}
+
+<h1>Error pages</h1>
+
+<p> Custom error pages are only shown when DJango is not in Debug mode.
+    This example has DEBUG set to False in settings.py and must run
+    with the command <code>python manage.py runserver --insecure</code>
+    to use of Bootstrap static files.
+ </p>
+
+<div class="container">
+    <div class="row">
+
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="card-title mt-2">Error 500 example</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">The error 500 page is rendered when an
+                        exception is raised in the view function. Push button to raise exception.
+                    </p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="{%url 'exception'%}" class="btn btn-danger">Raise exception</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100" >
+                <div class="card-header">
+                    <h5 class="card-title mt-2">Error 404 example</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">The error 404 page is rendered when a view is not found.
+                        . Push button to view the template.
+                    </p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="nopage" class="btn btn-primary ">View not found</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header">
+                    <h5 class="card-title mt-2">Error 403 example</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">The error 403 page is rendered for unauthorized
+                        resource access.    Push button to view the template.
+                    </p>
+                </div>
+                <div class="card-footer text-end">
+                    <a href="{%url 'secret'%}" class="btn btn-danger">View page</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+

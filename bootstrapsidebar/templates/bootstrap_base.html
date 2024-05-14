@@ -13,18 +13,14 @@
     <link href="{% static 'fonts.css' %}" rel="stylesheet">
     <link href="{% static 'layout.css' %}" rel="stylesheet">
 
-
     {% block custom-css %}
-
     {% endblock %}
 
     {% block head %}
     <title>{% block title %}Bootstrap template{% endblock %}</title>
     {% endblock %}
   </head>
-
   <body>
-
   <div class="page-wrapper">
 
   {% block page-wrapper %}
@@ -77,7 +73,7 @@
       <ul class="list-unstyled" >
         <li>
             <form action="{% url 'logout' %}" method="post">{% csrf_token %}
-              <button class="btn btn-sidebar" type="submit">Logout</input>
+              <button class="btn btn-sidebar" type="submit">Logout</button>
             </form>
         </li>
 
@@ -106,6 +102,12 @@
             {% block navbar-links %}
             <div class="collapse navbar-collapse" id="navbarTop">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Page</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarAdmin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Menu
@@ -119,17 +121,25 @@
                           <li><a class="dropdown-item" href="#">Item</a></li>
                         </ul>
                       </li>
-                      <li class="nav-item active">
-                        <a class="nav-link" href="#">Page</a>
-                    </li>
 
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Page</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Options
+                        </a>
+                        <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbar-options">
+                            <li >
+                                <a class="dropdown-item" href="{% url 'password_change' %}">Password</a>
+                            </li>
+                            <li><hr class="dropdown-divider"></li>
+        
+                            <li >
+                              <form action="{% url 'logout' %}" method="post">{% csrf_token %}
+                                <button type="submit" class="dropdown-item">Logout</button>
+                              </form>
+                            </li>
+                        </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Page</a>
-                    </li>
+                    
                 </ul>
             </div>
             {% endblock %}
@@ -215,7 +225,7 @@
         {% block footer %}
         <div class="contanier" >
             <footer class="text-end text-secondary fst-italic mt-5">
-            <p>&copy; 2023 Paulino Ruiz de Clavijo Vázquez</p>
+            <p>&copy; 2024 Paulino Ruiz de Clavijo Vázquez</p>
             </footer>
         </div>
         {% endblock %}

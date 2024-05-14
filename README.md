@@ -1,4 +1,4 @@
-# Collapsible Sidebar Using Bootstrap for DJango
+# Collapsible Sidebar Using Bootstrap for Django
 
 *Collapsible Sidebar Using Bootstrap* is a base template with a bootstrap simple
 customization in self-hosted mode (non-CDN).
@@ -7,21 +7,34 @@ Features:
 
 - Bootstrap 5.3
 - Django 4
+- Included demo at [example folder](example)
 - Templates included:
   - bootstrap_base.html
-  - bootstrap_popovers.html
-  - registration/login.html
   - snippets/show_err.html
   - snippets/show_messages.html
+- Templates overridden:
+  - registration/login.html
+  - registration/password_change_form.html
+  - 403.html
+  - 404.html
+  - 500.html
 - Bootstrap customization available at bootstrap-theme directory.
 - Custom font from google-fonts in local static files.
 
 Bootstrap theme and fonts are customizable using scripts included. See details
 [bellow](#customize-bootstrap-theme).
 
-## Preview
+## Testing templates with example/demo
 
-![Template preview](doc/capture.png)
+An example is included in the [example folder](example) with a Makefile to
+initialize the project and preview the templates. More details in 
+[example/README](example/README.md)
+
+## Template preview
+
+![Frontpage preview](doc/front-page.png)
+
+![Secondary page preview](doc/secondary-page.png)
 
 
 ## Installation
@@ -44,27 +57,6 @@ INSTALLED_APPS = [
 ]
 ```
 
-## Testing example base-templates
-
-To test the sidebar and login pages add to `urls.py`:
-
-```python
-from django.views.generic import TemplateView
-from django.contrib.auth import views as auth_views
-
-urlpatterns = [
-    ...
-    path('demo',TemplateView.as_view(template_name="bootstrap_base.html"),name='demo'),
-    path('popovers',TemplateView.as_view(template_name="bootstrap_popovers.html"), name="popovers"),
-    path('login',auth_views.LoginView.as_view(), name="login"),
-```
-
-Pages can be tested at:
-
-- http://localhost:8000/demo
-- http://localhost:8000/login
-- http://localhost:8000/popovers
-
 ## Blocks available in page layout
 
 The base template (`bootstrap_base.html`) includes the following hierarchical
@@ -79,9 +71,10 @@ blocks:
   - *block messages*: by default this block uses `snippets/show_messages.html`
   - *block content*
   - *block footer*
-- *block after-bootstrap-js*: used to run extra javascript like to enable Bootstrap Popovers. [See below details](#enable-bootstrap-popovers)
+- *block after-bootstrap-js*: used to run extra javascript like to enable
+   Bootstrap Popovers. [See below details](#enable-bootstrap-popovers)
 
-The `registration/login.html` is an example page using base-template without
+The `registration/login.html` is an example of page using base-template without
 sidebar.
 
 ## Customize bootstrap theme
@@ -107,7 +100,8 @@ To generate/upgrade static files makefile automates the process, run make:
 
 Due performance reasons popovers are not default enabled. One way is to enable
 popovers everywhere, which requires an extra javascript after the Bootstrap
-javascript. The last solution is not optimal, but it is a simple way, a detailed instructions are available at [Bootstrap
+javascript. The last solution is not optimal, but it is a simple way, a detailed
+instructions are available at [Bootstrap
 Popovers](https://getbootstrap.com/docs/5.2/components/popovers/)
 
 The block `after-bootstrap-js` is intended  to enable popovers and
@@ -122,9 +116,8 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 {% endblock %}
 ```
 
-A full example is available at template
-[bootstrap_popovers.html](bootstrapsidebar/templates/bootstrap_popovers.html)
-
+A full example is included in the example folder in page  
+[popovers.html](example/app/templates/popovers.html)
 
 ## License
 

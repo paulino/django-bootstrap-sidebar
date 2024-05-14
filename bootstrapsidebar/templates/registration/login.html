@@ -19,13 +19,14 @@
           {% include 'snippets/show_err.html' with err=form.non_field_errors %}
           <div class="mb-3">
             {% include 'snippets/show_err.html' with err=form.username.errors %}
-            <input type="text" class="form-control" id="username" aria-describedby="emailHelp"
-              autocomplete="current-password"
+            <input type="text" class="form-control" id="username"
+              autocomplete="username" required 
               name="username" placeholder="{% translate 'username' %}">
           </div>
           <div class="mb-3">
             {% include 'snippets/show_err.html' with err=form.password.errors %}
-            <input type="password" class="form-control" id="password" placeholder="{% translate 'password' %}" name="password">
+            <input type="password" class="form-control" id="password" placeholder="{% translate 'password' %}" 
+              name="password" autocomplete="password" required>
           </div>
           <div class="text-center">
             <input type="hidden" name="next" value="{{ next }}">
