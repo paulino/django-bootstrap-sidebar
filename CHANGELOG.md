@@ -1,12 +1,13 @@
 # Changelog
 
-## [Unreleased]
+## [v1.2.4]
 
 - Upgraded to Bootstrap 5.3.3
-- Added a template for override default django change password form
-- Changed login template
 - Fixed logout link in sidebar
 - Fixed padding in top menu
+- Added a template for overriding the default django change password form
+- Added i18n support to login template
+- Removed requests dependence in fonts-downloader
 
 ## [v1.2.3]
 
