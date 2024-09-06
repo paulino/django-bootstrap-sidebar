@@ -4,3 +4,5 @@ venv
 dist
 django_bootstrap_sidebar.egg-info
 fonts.css
+build
+bootstrap-theme/sidebar-bootstrap.min.css*

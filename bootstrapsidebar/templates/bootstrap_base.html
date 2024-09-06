@@ -40,34 +40,6 @@
       </div>
 
     <hr />
-    <ul class="list-unstyled components">
-    <li class="active">
-
-        <a href="#homeSubmenu"
-            data-bs-toggle="collapse"
-            aria-expanded="false"
-            role="button"
-            class="dropdown-toggle">Home</a>
-            <ul class="collapse list-unstyled"
-                id="homeSubmenu">
-                <li>
-                    <a href="#">Home 1</a>
-                </li>
-                <li>
-                    <a href="#">Home 2</a>
-                </li>
-                <li>
-                    <a href="#">Home 3</a>
-                </li>
-            </ul>
-    </li>
-    <li>
-        <a href="examples">Examples</a>
-    </li>
-    <li>
-        <a href="#">About</a>
-    </li>
-    </ul>
 
     {% if user.is_authenticated %}
       <ul class="list-unstyled" >
@@ -100,48 +72,7 @@
                 <img class="mdi-svg" src="{% static 'mdi/menu.svg' %}" type="image/svg+xml" />
             </button>
             {% block navbar-links %}
-            <div class="collapse navbar-collapse" id="navbarTop">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Page</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Page</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarAdmin" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Menu
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarAdmin">
-                          <li><a class="dropdown-item" href="#">
-                              Item</a></li>
-                          <li><a class="dropdown-item" href="#">
-                              Item</a></li>
-                          <li><hr class="dropdown-divider"></li>
-                          <li><a class="dropdown-item" href="#">Item</a></li>
-                        </ul>
-                      </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbar-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Options
-                        </a>
-                        <ul class="dropdown-menu  dropdown-menu-end" aria-labelledby="navbar-options">
-                            <li >
-                                <a class="dropdown-item" href="{% url 'password_change' %}">Password</a>
-                            </li>
-                            <li><hr class="dropdown-divider"></li>
-        
-                            <li >
-                              <form action="{% url 'logout' %}" method="post">{% csrf_token %}
-                                <button type="submit" class="dropdown-item">Logout</button>
-                              </form>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                </ul>
-            </div>
             {% endblock %}
         </div>
     </nav>
@@ -151,75 +82,9 @@
         {% include 'snippets/show_messages.html' %}
     {% endblock %}
 
-
-
     <div id="content-wrapper">
         {% block content %}
 
-            <h2>Collapsible Sidebar Using Bootstrap
-                <span id="bootstrap-version"></span></h2>
-
-            <script>
-                window.onload = function() {
-                    document.getElementById("bootstrap-version").innerHTML = bootstrap.Tooltip.VERSION
-                }
-            </script>
-
-            <p> Example of <a href="#" class="download-icon"> download link
-            </a> and an <a href="" class="link-icon" >External link</a></p>
-
-            <p>Lorem ipsum dolor
-            sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.</p> <p>Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-            officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2> <p>Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-
-            <p>Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-
-            <p>Lorem ipsum dolor sit amet,
-            consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.</p>
 
         {% endblock %}
         {% block footer %}

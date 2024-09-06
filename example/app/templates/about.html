@@ -1,0 +1,33 @@
+{% extends 'demo_base.html' %}
+{% block content %}
+
+<h1 id="example-project-for-django-bootstrap-sidebar">Example Project
+for django-bootstrap-sidebar</h1>
+<p>This example contains a simple Django project with a sidebar menu
+using the <code>django-bootstrap-sidebar</code> package. The demo
+includes:</p>
+<ul>
+<li>Several pages with a sidebar menu that tracks the current page</li>
+<li>A login form demo</li>
+<li>A password reset form demo</li>
+<li>Default pages for errors 500, 403, and 404</li>
+<li>Popovers</li>
+</ul>
+<h2 id="running-the-example">Running the Example</h2>
+<p>To test the example, you need clone this repo or download the source
+code. Then, the following command will automate the setup of the project
+and create an <code>admin</code> user with the password
+<code>1234</code>:</p>
+<pre><code>make init</code></pre>
+<p>This command creates a Python <em>virtualenv</em> in the
+<em>venv</em> directory, installs the requirements, and sets up Django
+with an admin user. Upon success, you can to run the server with:</p>
+<pre><code>make run</code></pre>
+<p>The server should be available at http://127.0.0.1:8000/</p>
+<h2 id="sidebar-menu-tracking">Sidebar Menu Tracking</h2>
+<p>The example also tracks the current page using a context variable in
+the template called <code>sidebar_active</code>. This variable is used
+to highlight the current page using the <code>active</code> Bootstrap
+class.</p>
+
+{% endblock %}

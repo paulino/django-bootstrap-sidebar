@@ -2,9 +2,10 @@
 
 ## [v1.2.5] Unreleased
 
-- Added templates for HTTP errors 500, 403 and 404.
-- Added a demo in example directory
+- Added templates for HTTP errors 500, 403 and 404
+- Added a demo in the example directory
 - Improved login form and password reset form
+- Optimized the size of `bootstrap_base.html` template
 
 ## [v1.2.4]
 
