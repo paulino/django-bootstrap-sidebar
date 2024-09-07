@@ -1,6 +1,6 @@
 # Changelog
 
-## [v1.2.5] Unreleased
+## [v1.2.5]
 
 - Added templates for HTTP errors 500, 403 and 404
 - Added a demo in the example directory

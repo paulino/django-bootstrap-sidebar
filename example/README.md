@@ -11,7 +11,9 @@ This example contains a simple Django project with a sidebar menu using the
 
 ## Running the Example
 
-To test the example, you need clone this repo or download the source code. Then, the following command will automate the setup of the project and create an `admin` user with the password `1234`:
+To test the example, you need clone this repo or download the source code. Then,
+the following command will automate the setup of the project and create an
+`admin` user with the password `1234`:
 
     make init
 
