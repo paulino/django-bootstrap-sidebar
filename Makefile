@@ -1,6 +1,7 @@
 STATIC_DIR=bootstrapsidebar/static
 
 .PHONY: build clean bootstrap
+PY=.venv/bin/python
 
 
 bootstrap:
@@ -11,11 +12,16 @@ bootstrap:
 	cp -r bootstrap-theme/fonts $(STATIC_DIR)
 	cp bootstrap-theme/fonts.css $(STATIC_DIR)/fonts.css
 
-package:
-	python3 -m build
+package: .venv
+	$(PY) -m build
 
+.venv:
+	python3 -m venv .venv
+	.venv/bin/pip install --upgrade pip
+	.venv/bin/pip install build twine
 
 clean:
 	rm -rf bootstrap-theme/node_modules
 	rm -f bootstrap-theme/*.css
 	rm -rf bootstrap-theme/fonts
+	rm -rf .venv
