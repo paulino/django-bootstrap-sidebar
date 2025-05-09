@@ -6,9 +6,9 @@
     "css-minify": "cleancss -O1 --source-map -o sidebar-bootstrap.min.css sidebar-bootstrap.css"
   },
   "dependencies": {
-    "bootstrap": "5.3.3",
-    "npm-run-all": "~4.1",
-    "sass": "~1.62",
+    "bootstrap": "5.3.6",
+    "npm-run-all": "latest",
+    "sass": "1.78.0",
     "clean-css-cli": "~5.6"
   }
 }

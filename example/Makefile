@@ -1,13 +1,13 @@
 
 .PHONY: run init clean
-PYBIN = venv/bin/python
+PYBIN = .venv/bin/python
 
 run:
 	# Insecure is required to serve static files and view error pages in the demo
 	$(PYBIN) manage.py runserver --insecure
 
 init:
-	[ -d 'venv' ] ||  python3 -m venv venv
+	[ -d '.venv' ] ||  python3 -m venv .venv
 	$(PYBIN) -m pip install -r requirements.txt
 	$(PYBIN) manage.py migrate
 	$(PYBIN) manage.py create1234superuser
@@ -20,4 +20,4 @@ app/templates/about.html: README.md
 	@echo "\n{% endblock %}" >> $@
 
 clean:
-	rm -rf venv db.sqlite3
+	rm -rf .venv db.sqlite3

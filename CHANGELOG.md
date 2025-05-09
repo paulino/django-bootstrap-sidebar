@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.2.6]
+
+- Upgraded to Bootstrap 5.3.6
+
 ## [v1.2.5]
 
 - Added templates for HTTP errors 500, 403 and 404
