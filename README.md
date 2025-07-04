@@ -6,7 +6,7 @@ customization in self-hosted mode (non-CDN).
 Features:
 
 - Bootstrap 5.3
-- Django 4
+- Django 5
 - Included demo at [example folder](example)
 - Templates included:
   - bootstrap_base.html
@@ -27,7 +27,7 @@ Bootstrap theme and fonts are customizable using scripts included. See details
 ## Testing templates with example/demo
 
 An example is included in the [example folder](example) with a Makefile to
-initialize the project and preview the templates. More details in 
+initialize the project and preview the templates. More details in
 [example/README](example/README.md)
 
 ## Template preview
@@ -116,7 +116,7 @@ const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstra
 {% endblock %}
 ```
 
-A full example is included in the example folder in page  
+A full example is included in the example folder in page
 [popovers.html](example/app/templates/popovers.html)
 
 ## License

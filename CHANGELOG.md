@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.2.7]
+
+- Upgraded to Bootstrap 5.3.7
+- Changed the fonts download script to use Node.js
+- Added `fonts.min.css`, but kept `fonts.css` for compatibility
+
 ## [v1.2.6]
 
 - Upgraded to Bootstrap 5.3.6

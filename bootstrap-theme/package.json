@@ -1,14 +1,17 @@
 {
   "scripts": {
-    "build": "npm-run-all bootstrap css-minify fonts",
-    "bootstrap": "sass --style compressed --source-map --embed-sources --no-error-css --load-path=node_modules custom.scss sidebar-bootstrap.css",
-    "fonts": "./gfontsdw.py 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300%3B400%3B700&display=swap'",
-    "css-minify": "cleancss -O1 --source-map -o sidebar-bootstrap.min.css sidebar-bootstrap.css"
+    "build": "npm-run-all bootstrap  fonts css-minify",
+    "bootstrap": "sass --style compressed --source-map --embed-sources --no-error-css --load-path=node_modules custom.scss build/sidebar-bootstrap.min.css",
+    "fonts": "./gfontsdw.js 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300%3B400%3B700&display=swap' build",
+    "css-minify": "cleancss -O1 --source-map -o build/fonts.min.css build/fonts.css"
   },
   "dependencies": {
-    "bootstrap": "5.3.6",
+    "bootstrap": "5.3.7",
+    "clean-css-cli": "~5.6",
+    "fs": "latest",
+    "https": "latest",
     "npm-run-all": "latest",
-    "sass": "1.78.0",
-    "clean-css-cli": "~5.6"
+    "path": "path",
+    "sass": "1.78.0"
   }
 }

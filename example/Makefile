@@ -13,6 +13,11 @@ init:
 	$(PYBIN) manage.py create1234superuser
 	@printf "\nYou can now run 'make run' to start the server and login with user 'admin' and password '1234'\n"
 
+# Develop mode for customizing or testing
+init-dev:
+	make init
+	$(PYBIN) -m pip install -e ../
+
 # Util to generate about.html from README.md
 app/templates/about.html: README.md
 	@echo "{% extends 'demo_base.html' %}\n{% block content %}\n" > $@
