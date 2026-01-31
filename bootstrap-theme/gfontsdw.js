@@ -20,6 +20,7 @@ const VERSION = "1";
 
 // Settings: the following options are not implemented as command line args
 const FORMAT = "woff2"; // Valid values: "woff", "ttf"
+const OUTPUT_FILE = "bootstrapsidebar-fonts.css";
 
 const HEADERS = {
     "woff2": {
@@ -98,8 +99,8 @@ https.get(cssUrl, { headers: HEADERS[FORMAT] }, (res) => {
             newCss = newCss.replaceAll(fontUrl, `fonts/${fontName}`);
         }
 
-        fs.writeFileSync(path.join(outputDir,"fonts.css"), newCss);
-        console.log("Generated: 'fonts.css'");
+        fs.writeFileSync(path.join(outputDir, OUTPUT_FILE), newCss);
+        console.log(`Generated: '${OUTPUT_FILE}'`);
     });
 }).on('error', (err) => {
     console.error(`Error fetching CSS: ${err.message}`);

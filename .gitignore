@@ -3,7 +3,7 @@ migrations
 .venv
 dist
 django_bootstrap_sidebar.egg-info
-fonts.css
 build
-bootstrap-theme/sidebar-bootstrap.min.css*
 node_modules
+example/db.sqlite3
+bootstrapsidebar/static/bootstrapsidebar-fonts.*

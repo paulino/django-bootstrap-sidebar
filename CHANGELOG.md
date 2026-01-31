@@ -1,5 +1,10 @@
 # Changelog
 
+## [v1.2.8]
+
+- Upgraded to Bootstrap 5.3.8
+- Fixed bug in css fonts 
+
 ## [v1.2.7]
 
 - Upgraded to Bootstrap 5.3.7

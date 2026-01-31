@@ -1,4 +1,4 @@
 # This demo depends on the exact version, when it is in development (dev branch)
 # it can to be installed with pip -e ../
-django
-django-bootstrap-sidebar==1.2.5.*
+django<7
+django-bootstrap-sidebar==1.2.*

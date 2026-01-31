@@ -6,7 +6,7 @@ customization in self-hosted mode (non-CDN).
 Features:
 
 - Bootstrap 5.3
-- Django 5
+- Django 5 and 6 compatible
 - Included demo at [example folder](example)
 - Templates included:
   - bootstrap_base.html
